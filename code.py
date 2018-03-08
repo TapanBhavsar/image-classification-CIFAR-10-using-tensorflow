@@ -105,7 +105,7 @@ def build_model(input_val,w,b):
     conv1 = tf.nn.conv2d(input_val,w['w1'],strides = [1,1,1,1], padding = 'SAME')
     conv1 = tf.nn.bias_add(conv1,b['b1'])
     conv1 = tf.nn.relu(conv1)
-    pool1 = tf.nn.max_pool(conv1, ksizes=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding='SAME')
+    pool1 = tf.nn.max_pool(conv1, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding='SAME')
 
     conv2 = tf.nn.conv2d(pool1,w['w2'],strides = [1,1,1,1], padding = 'SAME')
     conv2 = tf.nn.bias_add(conv2,b['b2'])
